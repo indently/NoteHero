@@ -14,6 +14,7 @@
 		7A4E864B279D6DC700C0CB2D /* NoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4E864A279D6DC700C0CB2D /* NoteView.swift */; };
 		7A4E864D279D758900C0CB2D /* EditNoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4E864C279D758900C0CB2D /* EditNoteView.swift */; };
 		7A4E8652279D7B4300C0CB2D /* NotesData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4E8651279D7B4300C0CB2D /* NotesData.swift */; };
+		7A830A03279D81980029AB8E /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A830A02279D81980029AB8E /* DateFormatter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		7A4E864A279D6DC700C0CB2D /* NoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteView.swift; sourceTree = "<group>"; };
 		7A4E864C279D758900C0CB2D /* EditNoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditNoteView.swift; sourceTree = "<group>"; };
 		7A4E8651279D7B4300C0CB2D /* NotesData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesData.swift; sourceTree = "<group>"; };
+		7A830A02279D81980029AB8E /* DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,9 +61,10 @@
 			children = (
 				7A4E863A279D6D4F00C0CB2D /* NoteHeroApp.swift */,
 				7A4E8653279D7B5C00C0CB2D /* Views */,
+				7A4E8654279D816400C0CB2D /* Helpers */,
+				7A830A04279D83000029AB8E /* Data */,
 				7A4E863E279D6D4F00C0CB2D /* Assets.xcassets */,
 				7A4E8640279D6D4F00C0CB2D /* Preview Content */,
-				7A4E8651279D7B4300C0CB2D /* NotesData.swift */,
 			);
 			path = NoteHero;
 			sourceTree = "<group>";
@@ -82,6 +85,22 @@
 				7A4E864C279D758900C0CB2D /* EditNoteView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		7A4E8654279D816400C0CB2D /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				7A830A02279D81980029AB8E /* DateFormatter.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		7A830A04279D83000029AB8E /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				7A4E8651279D7B4300C0CB2D /* NotesData.swift */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -158,6 +177,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A830A03279D81980029AB8E /* DateFormatter.swift in Sources */,
 				7A4E864D279D758900C0CB2D /* EditNoteView.swift in Sources */,
 				7A4E863D279D6D4F00C0CB2D /* ContentView.swift in Sources */,
 				7A4E863B279D6D4F00C0CB2D /* NoteHeroApp.swift in Sources */,

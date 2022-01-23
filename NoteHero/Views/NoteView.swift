@@ -19,7 +19,6 @@ struct NoteView: View {
                         .font(.headline)
                     Text(note.content)
                         .font(.body)
-                        .lineLimit(3)
                         .padding(.vertical)
                 
                     HStack {
@@ -37,7 +36,6 @@ struct NoteView: View {
     func deleteNote(at offsets: IndexSet) {
         notes.notes.remove(atOffsets: offsets)
     }
-        
 }
 
 struct NoteView_Previews: PreviewProvider {

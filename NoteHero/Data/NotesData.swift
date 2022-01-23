@@ -12,17 +12,17 @@ struct Note : Codable, Identifiable {
     let id = UUID()
     var title: String
     var content: String
-    var timeStamp: Double
+    var timeStamp: String
 }
 
 @MainActor class Notes : ObservableObject {
+    private let NOTES_KEY = "NotesKey"
     var notes: [Note] {
         didSet {
-            saveNote()
+            saveData()
             objectWillChange.send()
         }
     }
-    private let NOTES_KEY = "NotesKey"
     
     init() {
         // Load saved data
@@ -32,18 +32,18 @@ struct Note : Codable, Identifiable {
                 return
             }
         }
-        // A test note
-        notes = [Note(title: "Test Note", content: "You should write some content in here, and it can be long as 100 characters.", timeStamp: 1231231231.0)]
+        // Tutorial Note
+        notes = [Note(title: "Test Note", content: "- Press on the \"Blue Plus\" to add a new note. \n- You can delete any note by swiping to the left!", timeStamp: formatDate(NSDate().timeIntervalSince1970))]
     }
     
     func addNote(title: String, content: String) {
-        let timeStamp = NSDate().timeIntervalSince1970
-        let tempNote = Note(title: title, content: content, timeStamp: timeStamp)
+        let tempNote = Note(title: title, content: content, timeStamp: formatDate(NSDate().timeIntervalSince1970))
         notes.insert(tempNote, at: 0)
-        saveNote()
+        saveData()
     }
     
-    private func saveNote() {
+    // Save data
+    private func saveData() {
         if let encodedNotes = try? JSONEncoder().encode(notes) {
             UserDefaults.standard.set(encodedNotes, forKey: NOTES_KEY)
         }
